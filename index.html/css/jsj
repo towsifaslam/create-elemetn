@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Todo app</title>
+    <style>
+      h1 {
+        font-size: 2rem;
+        text-align: center;
+        background-color: blueviolet;
+        padding: 20px 20px;
+        color: white;
+      }
+      .head {
+        display: flex;
+        justify-content: center;
+      }
+      .body-part {
+        width: 45%;
+
+        float: left;
+      }
+      input {
+        font-size: 20px;
+        width: 97%;
+      }
+      label {
+        font-size: 18px;
+      }
+      button {
+        width: 90px;
+        height: 30px;
+        text-align: center;
+        font-size: 18px;
+        background-color: blueviolet;
+        color: white;
+        border-radius: 7px;
+        box-shadow: 2px 2px 3px black;
+      }
+      table,
+      th,
+      td,
+      tr {
+        width: 100%;
+        border: 1px solid black;
+        padding: 20px;
+        font-size: 18px;
+        color: black;
+      }
+
+      tr:nth-child(even) {
+        background-color: rebeccapurple;
+      }
+
+      /* tr:nth-child(odd) {
+  background-color: red;
+} */
+      th {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>javacript Todo app Student add</h1>
+    </header>
+    <main class="head">
+      <div class="body-part">
+        <form action="" name="for">
+          <label for="fname">First name:</label><br />
+          <input type="text" id="name" name="fname" /><br />
+          <label for="lname">id</label><br />
+          <input type="number" id="Id" name="lname" /><br /><br />
+          <label for="fname">department</label><br />
+          <input type="text" id="dpt" name="fname" /><br />
+          <label for="lname">gpa</label><br />
+          <input type="text" id="gpa" name="lname" /><br /><br />
+          <button>submit</button>
+        </form>
+      </div>
+      <div class="body-part2">
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>id</th>
+            <th>dpt</th>
+            <th>backround</th>
+          </thead>
+
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </main>
+    <script>
+      const name = document.querySelector("#name");
+      const id = document.querySelector("#Id");
+      const dpt = document.querySelector("#dpt");
+      const gpa = document.querySelector("#gpa");
+      const btn = document.querySelector("button");
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        //   if (name.value == "" || id.value == "" || dpt.value == "") alert("hi");
+        if (name.value == "") {
+          alert("apni toh name faka rekhe dilen ");
+        } else if (id.value == "") {
+          alert("duru mia ki korlen abr o faka rekde dilen ");
+        } else if (dpt.value == "") {
+          alert("kire vai abr ki korle . hush apni kehn thake ber hon");
+        } else if (gpa.value == "") {
+          alert("ahre ami pgl hoi jabe ");
+        } else {
+          var tbody = document.getElementById("tbody");
+          var tr = document.createElement("tr");
+          //for name
+          var td = document.createElement("td");
+          td.innerHTML = name.value;
+          tr.appendChild(td);
+          // names ends here
+          // for id
+          var td = document.createElement("td");
+          td.innerHTML = id.value;
+          tr.appendChild(td);
+          //end
+          // deparment
+          var td = document.createElement("td");
+          td.innerHTML = dpt.value;
+          tr.appendChild(td);
+          //end
+          //for gpa
+          var td = document.createElement("td");
+          td.innerHTML = gpa.value;
+          tr.appendChild(td);
+          //end
+          tbody.appendChild(tr);
+        }
+      });
+    </script>
+  </body>
+</html>
